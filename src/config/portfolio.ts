@@ -42,8 +42,8 @@ export const portfolioConfig = {
   // Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ → ID is "dQw4w9WgXcQ"
   videos: [
     {
-      id: "dQw4w9WgXcQ",
-      title: "Cinematic Edit",
+      id: "RitQ0vEaRbA",
+      title: "Show reels",
       category: "YouTube",
     },
     {
