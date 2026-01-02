@@ -1,11 +1,28 @@
 import { portfolioConfig } from "@/config/portfolio";
 import { useInView } from "@/hooks/useInView";
-import { useRef } from "react";
-import { Quote } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
+import { Quote, Loader2 } from "lucide-react";
+import { useYouTubeProfiles } from "@/hooks/useYouTubeProfile";
 
 const TestimonialsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { threshold: 0.2 });
+
+  // Get YouTube handles for auto-fetching
+  const youtubeHandles = portfolioConfig.testimonials
+    .filter((t) => t.platform === "youtube" && t.handle)
+    .map((t) => t.handle);
+
+  const { profiles, loading: profilesLoading } = useYouTubeProfiles(youtubeHandles);
+
+  // Get avatar for a testimonial
+  const getAvatar = (testimonial: typeof portfolioConfig.testimonials[0]) => {
+    if (testimonial.platform === "youtube" && testimonial.handle) {
+      const profile = profiles[testimonial.handle];
+      return profile?.avatar || testimonial.avatar;
+    }
+    return testimonial.avatar;
+  };
 
   return (
     <section 
@@ -43,17 +60,26 @@ const TestimonialsSection = () => {
 
               {/* Author */}
               <a 
-                href={(testimonial as any).link || '#'}
+                href={testimonial.link || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"
               >
-                <div className="w-12 h-12 rounded-full bg-muted overflow-hidden ring-2 ring-transparent group-hover:ring-primary transition-all">
-                  <img 
-                    src={testimonial.avatar} 
-                    alt={testimonial.name}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-12 h-12 rounded-full bg-muted overflow-hidden ring-2 ring-transparent group-hover:ring-primary transition-all relative">
+                  {profilesLoading && testimonial.platform === "youtube" ? (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <Loader2 className="w-5 h-5 animate-spin text-muted-foreground" />
+                    </div>
+                  ) : (
+                    <img 
+                      src={getAvatar(testimonial)} 
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = testimonial.avatar;
+                      }}
+                    />
+                  )}
                 </div>
                 <div>
                   <p className="font-semibold text-foreground group-hover:text-primary transition-colors">{testimonial.name}</p>

@@ -98,13 +98,17 @@ export const portfolioConfig = {
   ],
 
   // Testimonials - Your Clients
+  // platform: "youtube" will auto-fetch profile picture
+  // platform: "instagram" requires manual avatar (API restrictions)
   testimonials: [
     {
       name: "Anmol From India",
       role: "YouTuber",
       text: "Amazing editing skills! The content quality improved significantly.",
-      avatar: "/placeholder.svg",
+      avatar: "/placeholder.svg", // Fallback only
       link: "https://www.youtube.com/@anmolfromindia",
+      platform: "youtube" as const,
+      handle: "anmolfromindia",
     },
     {
       name: "TechCM Shorts",
@@ -112,13 +116,16 @@ export const portfolioConfig = {
       text: "Professional and creative edits that boosted our engagement.",
       avatar: "/placeholder.svg",
       link: "https://www.youtube.com/@techcmshorts",
+      platform: "youtube" as const,
+      handle: "techcmshorts",
     },
     {
       name: "Creator Adarsh",
       role: "Instagram Creator",
       text: "Exceptional reels editing that helped grow my audience.",
-      avatar: "/placeholder.svg",
+      avatar: "/placeholder.svg", // Manual upload needed for Instagram
       link: "https://www.instagram.com/creator.adarshh/",
+      platform: "instagram" as const,
     },
     {
       name: "Kagan Dunlap",
@@ -126,6 +133,8 @@ export const portfolioConfig = {
       text: "Outstanding work on every project. Highly recommended!",
       avatar: "/placeholder.svg",
       link: "https://www.youtube.com/@kagan.dunlap",
+      platform: "youtube" as const,
+      handle: "kagan.dunlap",
     },
     {
       name: "Zack D Films",
@@ -133,13 +142,16 @@ export const portfolioConfig = {
       text: "Creative vision and attention to detail in every edit.",
       avatar: "/placeholder.svg",
       link: "https://www.youtube.com/@zackdfilms",
+      platform: "youtube" as const,
+      handle: "zackdfilms",
     },
     {
       name: "Battle Tested Lawyer",
       role: "Instagram Creator",
       text: "Professional editing that elevated my content quality.",
-      avatar: "/placeholder.svg",
+      avatar: "/placeholder.svg", // Manual upload needed for Instagram
       link: "https://www.instagram.com/battletestedlawyer/",
+      platform: "instagram" as const,
     },
   ],
 };
