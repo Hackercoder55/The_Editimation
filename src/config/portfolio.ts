@@ -8,28 +8,35 @@ export const portfolioConfig = {
   name: "SANTOSH KUMAR",
   title: "VIDEO EDITOR",
   subtitle: "YOUTUBE : EditFlareMedia",
-  
+
   // About Section
   about: {
     yearsExperience: "5+",
     description: `In my 5+ years as a video editor, specializing in Adobe Premiere Pro & After Effects on YouTube videos and Instagram reels, I've had the honor of collaborating with a variety of clients, crafting visually captivating edits tailored to each platform's unique audience and format. From dynamic vlogs to punchy, attention-grabbing reels, I bring creativity, precision, and a passion for storytelling to every project, ensuring maximum impact and engagement.`,
-    skills: ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve", "Motion Graphics", "Color Grading", "Sound Design"],
+    skills: [
+      "Adobe Premiere Pro",
+      "After Effects",
+      "DaVinci Resolve",
+      "Motion Graphics",
+      "Color Grading",
+      "Sound Design",
+    ],
   },
-  
+
   // Social Links
   socials: {
     instagram: "https://www.instagram.com/the_editimation/",
     youtube: "https://www.youtube.com/@EditFlareMedia",
     email: "Queries.santosh@gmail.com",
-    whatsapp: "919999999999", // Replace with your actual WhatsApp number (with country code, no + sign)
+    whatsapp: "916205789970", // Replace with your actual WhatsApp number (with country code, no + sign)
   },
-  
+
   // Profile Image (replace with your own image URL or import)
   profileImage: "/placeholder.svg",
-  
+
   // Hero Background Image
   heroBackground: "/placeholder.svg",
-  
+
   // Portfolio Videos - Add your YouTube video IDs here
   // To get the video ID, copy the part after "v=" in the YouTube URL
   // Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ → ID is "dQw4w9WgXcQ"
@@ -65,7 +72,7 @@ export const portfolioConfig = {
       category: "YouTube",
     },
   ],
-  
+
   // Services Offered
   services: [
     {
@@ -89,7 +96,7 @@ export const portfolioConfig = {
       icon: "palette",
     },
   ],
-  
+
   // Testimonials - Your Clients
   testimonials: [
     {
