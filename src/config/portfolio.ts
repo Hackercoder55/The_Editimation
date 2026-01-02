@@ -5,9 +5,9 @@
 
 export const portfolioConfig = {
   // Personal Information
-  name: "AMAN VASHIST",
+  name: "SANTOSH KUMAR",
   title: "VIDEO EDITOR",
-  subtitle: "YOUTUBE : NichLmao",
+  subtitle: "YOUTUBE : EditFlareMedia",
   
   // About Section
   about: {
@@ -18,9 +18,10 @@ export const portfolioConfig = {
   
   // Social Links
   socials: {
-    instagram: "https://www.instagram.com/real._menace_02/",
-    youtube: "https://youtube.com/@NichLmao",
-    email: "contact@amanvashist.com",
+    instagram: "https://www.instagram.com/the_editimation/",
+    youtube: "https://www.youtube.com/@EditFlareMedia",
+    email: "Queries.santosh@gmail.com",
+    whatsapp: "919999999999", // Replace with your actual WhatsApp number (with country code, no + sign)
   },
   
   // Profile Image (replace with your own image URL or import)
@@ -89,19 +90,49 @@ export const portfolioConfig = {
     },
   ],
   
-  // Testimonials
+  // Testimonials - Your Clients
   testimonials: [
     {
-      name: "Creator Name",
-      role: "YouTuber • 1M Subscribers",
-      text: "Working with Aman transformed my channel. The edits are always on point and delivered on time.",
+      name: "Anmol From India",
+      role: "YouTuber",
+      text: "Amazing editing skills! The content quality improved significantly.",
       avatar: "/placeholder.svg",
+      link: "https://www.youtube.com/@anmolfromindia",
     },
     {
-      name: "Brand Name",
-      role: "Marketing Director",
-      text: "Exceptional quality and creativity. Our engagement rates doubled after working together.",
+      name: "TechCM Shorts",
+      role: "YouTuber",
+      text: "Professional and creative edits that boosted our engagement.",
       avatar: "/placeholder.svg",
+      link: "https://www.youtube.com/@techcmshorts",
+    },
+    {
+      name: "Creator Adarsh",
+      role: "Instagram Creator",
+      text: "Exceptional reels editing that helped grow my audience.",
+      avatar: "/placeholder.svg",
+      link: "https://www.instagram.com/creator.adarshh/",
+    },
+    {
+      name: "Kagan Dunlap",
+      role: "YouTuber",
+      text: "Outstanding work on every project. Highly recommended!",
+      avatar: "/placeholder.svg",
+      link: "https://www.youtube.com/@kagan.dunlap",
+    },
+    {
+      name: "Zack D Films",
+      role: "YouTuber",
+      text: "Creative vision and attention to detail in every edit.",
+      avatar: "/placeholder.svg",
+      link: "https://www.youtube.com/@zackdfilms",
+    },
+    {
+      name: "Battle Tested Lawyer",
+      role: "Instagram Creator",
+      text: "Professional editing that elevated my content quality.",
+      avatar: "/placeholder.svg",
+      link: "https://www.instagram.com/battletestedlawyer/",
     },
   ],
 };
