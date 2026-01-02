@@ -2,3 +2,6 @@ project_id = "snmfybnyjdsfygmggpsp"
 
 [functions.send-contact-email]
 verify_jwt = false
+
+[functions.fetch-youtube-profile]
+verify_jwt = false
