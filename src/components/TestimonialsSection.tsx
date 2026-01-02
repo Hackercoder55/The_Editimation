@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
           {portfolioConfig.testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className={`relative p-8 glass-card rounded-2xl hover-lift opacity-0 ${isInView ? 'animate-scale-in' : ''}`}
+              className={`relative p-8 glass-card rounded-2xl hover-lift opacity-0 ${isInView ? 'animate-scale-in' : ''} ${index % 2 === 0 ? 'animate-float' : 'animate-float-delayed'}`}
               style={{ animationFillMode: 'forwards', animationDelay: `${0.2 + index * 0.15}s` }}
             >
               {/* Quote Icon */}
