@@ -7,6 +7,17 @@ import { useYouTubeProfiles } from "@/hooks/useYouTubeProfile";
 const TestimonialsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { threshold: 0.2 });
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  // Trigger floating after initial fade-in completes
+  useEffect(() => {
+    if (isInView && !hasAnimated) {
+      const timer = setTimeout(() => {
+        setHasAnimated(true);
+      }, 800); // Wait for fade-in to complete
+      return () => clearTimeout(timer);
+    }
+  }, [isInView, hasAnimated]);
 
   // Get YouTube handles for auto-fetching
   const youtubeHandles = portfolioConfig.testimonials
@@ -45,8 +56,10 @@ const TestimonialsSection = () => {
           {portfolioConfig.testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className={`relative p-8 glass-card rounded-2xl hover-lift opacity-0 ${isInView ? 'animate-scale-in' : ''} ${index % 2 === 0 ? 'animate-float' : 'animate-float-delayed'}`}
-              style={{ animationFillMode: 'forwards', animationDelay: `${0.2 + index * 0.15}s` }}
+              className={`relative p-8 glass-card rounded-2xl hover-lift transition-all duration-500 ${
+                isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              } ${hasAnimated ? (index % 2 === 0 ? 'animate-float' : 'animate-float-delayed') : ''}`}
+              style={{ transitionDelay: `${0.2 + index * 0.15}s` }}
             >
               {/* Quote Icon */}
               <div className="absolute -top-4 -left-4 w-10 h-10 flex items-center justify-center rounded-full bg-primary text-primary-foreground">
