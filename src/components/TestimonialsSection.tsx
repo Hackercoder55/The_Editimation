@@ -42,8 +42,13 @@ const TestimonialsSection = () => {
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-muted overflow-hidden">
+              <a 
+                href={(testimonial as any).link || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-12 h-12 rounded-full bg-muted overflow-hidden ring-2 ring-transparent group-hover:ring-primary transition-all">
                   <img 
                     src={testimonial.avatar} 
                     alt={testimonial.name}
@@ -51,10 +56,10 @@ const TestimonialsSection = () => {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="font-semibold text-foreground group-hover:text-primary transition-colors">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
-              </div>
+              </a>
             </div>
           ))}
         </div>
