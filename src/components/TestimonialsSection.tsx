@@ -45,13 +45,13 @@ const TestimonialsSection = () => {
           {portfolioConfig.testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className={`relative p-8 glass-card rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
-                isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`group/card relative p-8 glass-card rounded-2xl transition-all duration-300 cursor-pointer
+                hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/50
+                ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
               style={{ transitionDelay: `${0.2 + index * 0.15}s` }}
             >
               {/* Quote Icon */}
-              <div className="absolute -top-4 -left-4 w-10 h-10 flex items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <div className="absolute -top-4 -left-4 w-10 h-10 flex items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform duration-300 group-hover/card:scale-110 group-hover/card:rotate-12">
                 <Quote className="w-5 h-5" />
               </div>
 
