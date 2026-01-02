@@ -3,6 +3,7 @@ import { useInView } from "@/hooks/useInView";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Instagram, Youtube, Mail, ArrowUpRight, MessageCircle, X } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const ContactSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -31,21 +32,28 @@ const ContactSection = () => {
       <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[150px]" />
       
       <div className="container px-4 md:px-6">
-        <div className={`max-w-4xl mx-auto text-center opacity-0 ${isInView ? 'animate-fade-in-up' : ''}`} style={{ animationFillMode: 'forwards' }}>
+        <div className={`max-w-4xl mx-auto opacity-0 ${isInView ? 'animate-fade-in-up' : ''}`} style={{ animationFillMode: 'forwards' }}>
           {/* Heading */}
-          <h2 className="section-title text-foreground mb-4">
-            LET'S <span className="text-primary glow-yellow">CREATE</span>
-          </h2>
-          <h2 className="section-title text-foreground -mt-6 mb-8">
-            TOGETHER
-          </h2>
+          <div className="text-center">
+            <h2 className="section-title text-foreground mb-4">
+              LET'S <span className="text-primary glow-yellow">CREATE</span>
+            </h2>
+            <h2 className="section-title text-foreground -mt-6 mb-8">
+              TOGETHER
+            </h2>
 
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-            Ready to elevate your content? Let's discuss your next project and create something amazing together.
-          </p>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
+              Ready to elevate your content? Let's discuss your next project and create something amazing together.
+            </p>
+          </div>
+
+          {/* Contact Form */}
+          <div className="max-w-md mx-auto mb-16 glass-card p-6 md:p-8 rounded-2xl">
+            <ContactForm />
+          </div>
 
           {/* CTA Button with Options */}
-          <div className="relative inline-block mb-16">
+          <div className="text-center relative mb-16">
             <Button 
               variant="hero" 
               size="lg" 
