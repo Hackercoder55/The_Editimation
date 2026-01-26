@@ -71,6 +71,26 @@ export const portfolioConfig = {
       title: "SaaS Video",
       category: "YouTube",
     },
+    {
+      id:"f04u-7ditpY",
+      title: "Long Form",
+      Category: "Youtube",
+    },
+    {
+      id: "slD0uPfVRkc",
+      title: "Long Form",
+      Category: "Youtube",
+    },
+    {
+      id: "bwdq9zBftB8",
+      title: "Long Form",
+      Category: "Youtube",
+    },
+    {
+      id: "X-qanHnl0Cs",
+      title: "Long Form",
+      Category: "Youtube"
+    },
   ],
 
   // Services Offered
